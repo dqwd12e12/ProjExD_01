@@ -13,14 +13,13 @@ def main():
     kk_image_list = [kk_img, kk_image2]
     tmr = 0
     
-    
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         x = tmr%1600
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img, [1600-x, 0])
-        screen.blit(kk_image_list[tmr%2], [300, 200])
+        screen.blit(kk_image_list[tmr//50%2], [300, 200])
         pg.display.update()
         tmr += 1        
         clock.tick(100) 
